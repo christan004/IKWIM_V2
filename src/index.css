@@ -1,0 +1,135 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter Tight", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: #F7F9FC;
+  --foreground: #1B2436;
+  --card: #FFFFFF;
+  --card-foreground: #1B2436;
+  --popover: #FFFFFF;
+  --popover-foreground: #1B2436;
+
+  /* Brand: bk.rw royal blue (#034ea2); overlays are white-mixed tints of it */
+  --primary: #034EA2;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: color-mix(in srgb, #034EA2 6%, white);
+  --secondary-foreground: color-mix(in srgb, #034EA2 85%, black);
+  --muted: color-mix(in srgb, #034EA2 6%, white);
+  --muted-foreground: color-mix(in srgb, #034EA2 40%, #64748B);
+  --accent: color-mix(in srgb, #034EA2 10%, white);
+  --accent-foreground: #034EA2;
+
+  --destructive: #DC2626;
+  --destructive-foreground: #FFFFFF;
+  --success: #16A34A;
+  --success-foreground: #FFFFFF;
+  --warning: #E39614;
+  --warning-foreground: #3A2A05;
+
+  --border: color-mix(in srgb, #034EA2 12%, #E2E8F0);
+  --input: color-mix(in srgb, #034EA2 12%, #E2E8F0);
+  --ring: #034EA2;
+
+  --sidebar: color-mix(in srgb, #034EA2 55%, black);
+  --sidebar-foreground: color-mix(in srgb, #034EA2 8%, white);
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-accent: rgba(255, 255, 255, 0.06);
+}
+
+.dark {
+  --background: #0B1220;
+  --foreground: #E6ECF5;
+  --card: #121B2E;
+  --card-foreground: #E6ECF5;
+  --popover: #121B2E;
+  --popover-foreground: #E6ECF5;
+
+  --primary: color-mix(in srgb, #034EA2 65%, white);
+  --primary-foreground: #0B1220;
+
+  --secondary: color-mix(in srgb, #034EA2 18%, #0B1220);
+  --secondary-foreground: #E6ECF5;
+  --muted: color-mix(in srgb, #034EA2 18%, #0B1220);
+  --muted-foreground: #8FA3C0;
+  --accent: color-mix(in srgb, #034EA2 28%, #0B1220);
+  --accent-foreground: color-mix(in srgb, #034EA2 65%, white);
+
+  --destructive: #F16565;
+  --destructive-foreground: #0B1220;
+  --success: #4ADE80;
+  --success-foreground: #0B1220;
+  --warning: #F0AA3C;
+  --warning-foreground: #241900;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: color-mix(in srgb, #034EA2 65%, white);
+
+  --sidebar: color-mix(in srgb, #034EA2 30%, black);
+  --sidebar-foreground: color-mix(in srgb, #034EA2 8%, white);
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+  --sidebar-accent: rgba(255, 255, 255, 0.07);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+    font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
